@@ -1,0 +1,292 @@
+/* /////////////////////////////////////////////////////////////////////////// */
+/* GENERAL SET-UP */
+
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#top-container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* CHART STYLING */
+#chart {
+  position: relative;
+  flex: 50%;
+  height: 98vh;
+  min-height: 680px;
+  max-width: 90%;
+  margin: 10px;
+  margin-bottom: 15px;
+}
+
+.axisLabel {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.axis {
+  font-size: 11pt;
+  stroke-width: 1.2pt;
+  font-weight: 500;
+}
+
+#xAxis {
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+.tooltip {
+  position: absolute;       
+  left: 5px;           
+  top: 12px;
+  visibility: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 450;
+  font-size: 10pt;
+  background-color: "gray";
+  padding: 8px;
+  pointer-events: none;
+}
+/* /////////////////////////////////////////////////////////////////////////// */
+/* TEXT BOX STYLING */
+
+#text-box {
+  flex: 20%;
+  margin: 10px;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  padding: 10px;
+  min-height: 0;
+}
+
+#page-title {
+  font-family: "Rubik";
+  font-size: 32pt;
+  font-weight: 800;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.blurb {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12pt;
+  font-weight: 325;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.head-blurb {
+  font-family: "Rubik";
+  font-size: 12.5pt;
+  font-weight: 800;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#subhead-blurb {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 11pt;
+  font-weight: 35O;
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  font-family: "Rubik";
+  font-size: 13.5pt;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+#section-head-1 {
+  color: steelblue;
+}
+
+#section-head-2 {
+  color: indianred;
+}
+
+#section-head-3 {
+  color: rebeccapurple;
+}
+
+.button {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  margin: 6px;
+  margin-bottom: 10px;
+}
+
+#happy_data_button {
+  color: steelblue;
+}
+
+#pat_A_button {
+  color: indianred;
+}
+
+#data_button {
+  color: rebeccapurple;
+}
+
+
+/* #read-below {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 11pt;
+  font-weight: 350;
+  font-style: italic;
+  margin-top: 35px;
+  margin-bottom: 15px;
+} */
+
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* PATTERN OVERVIEW STYLING */
+
+#ps-header-box {
+  margin: 5px;
+  margin-left: 0px;
+  grid-column: span 2;
+  grid-area: "ps-header";
+}
+
+#ps-header-text {
+  font-family: "Rubik";
+  font-size: 22pt;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+#ps-header-subtext {
+  font-family: "Rubik";
+  font-size: 12pt;
+  font-weight: 300;
+  margin: 14px;
+}
+
+.ps-pattern {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13pt;
+  font-weight: 300;
+  margin: 5px;
+  width: 75%;
+  
+}
+
+#pat-A {
+  grid-area: pat-A;
+}
+#pat-B {
+  grid-area: pat-B;
+}
+#pat-C {
+  grid-area: pat-C;
+}
+#pat-D {
+  grid-area: pat-D;
+}
+#pat-E {
+  grid-area: pat-E;
+}
+#pat-UC {
+  grid-area: pat-UC;
+}
+
+#ps-grid {
+  grid-column: span 2;
+  display: grid;
+  grid-template-rows: 0.25fr 1.25fr 1.25fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+  grid-template-areas: 
+    "ps-header ps-header ps-header"
+    "pat-A pat-B pat-C"
+    "pat-D pat-E pat-UC";
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* READ PRE-PRINT STYLING */
+
+#read-preprint {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12.5pt;
+  font-weight: 300;
+  margin: 50px;
+  margin-top: 100px;
+  /* color: slategray; */
+}
+
+/* unvisited link */
+a:link {
+  color:steelblue;
+  text-decoration: none;
+}
+/* visited link */
+a:visited {
+  color: rebeccapurple;
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+  color: dodgerblue;
+  text-decoration: underline;
+}
+/* selected link */
+a:active {
+  color:  rebeccapurple;
+  text-decoration: underline;
+} 
+
+
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* RESPONSIVENESS FOR PHONES & SMALL BROWSER WINDOWS */
+
+
+ @media only screen and (max-width: 1300px) {
+  
+  /* #top-container {
+  flex-flow: column;
+  } */
+
+  /* #text-box {
+    order: 1;
+  } */
+
+  #chart {
+    /* order: 2; */
+    min-height: 75vh;
+    min-width: 100%;
+  }
+
+} 
+
+
+@media only screen and (max-height: 650px) {
+  
+  #chart {
+    min-height: 650px;
+    min-width: 100%;
+  }
+
+}
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="./style/style.css">
+        <script src="./lib/d3.js"></script>
+    </head>
+    <body>
+        <div id="top-container">
+
+                <div id="chart"></div>
+
+                <div id ="text-box">
+                    <h1 id = "page-title"> 
+                        Emotion Variation
+                    </h1>
+
+                        <p id = "subhead-blurb">
+                            These data capture one person's reported emotional experiences over 14 days. 
+                            Each dot represents a set of reported emotion instances. 
+                            Using bodily signals recorded at the time of each report, we ran a mathematical clustering algorithm to assign each report to the best fitting physiological pattern (A, B, C, D, E, or unclustered).
+                            Larger dots signify more reported emotion instances.
+                        </p>
+
+                        <p class = section-header id = section-head-1> CONSISTENCY: </p>
+                        <h5 class = head-blurb id = head-blurb1 > For a given emotion, do we see a <i>consistent</i> pattern of physiological change?</h5>
+                            
+                            <p class = blurb id = "blurb1">
+
+                                Looking just at instances when this person reported feeling <b><span style="color: steelblue;">happy</span></b>, 
+                                there was not just one corresponding pattern of physiological change. 
+                                Instead, this emotion was characterized by many different physiological patterns. 
+                                        
+                            </p>
+
+                            <button class= "button" id ="happy_data_button">Refresh "happy"</button>
+
+                        <p class = section-header id = section-head-2> SPECIFICITY: </p> 
+                        <h5 class = head-blurb id = head-blurb2> Do instances of different emotions correspond to <i>specific</i> patterns of physiological change?</h5>
+                        
+                            <p class = blurb id = "blurb2">
+
+                            Looking just at <b><span style="color: indianred;">Pattern A</span></b>, 
+                            this person reported feeling many different emotions even when their physiological patterns were very similar. 
+                            This suggests a pattern of physiological changes is not specific to just one emotion.
+
+                            </p>
+
+                            <button class= "button" id ="pat_A_button">Refresh "Pattern A"</button>
+
+                        <p class = section-header id = section-head-3> OVERALL: </p>
+                        <h5 class = head-blurb id = head-blurb3 >What about other emotions and physiological patterns?</h5>
+                            
+                            <p class = blurb id = "blurb3">
+            
+                            Across the <b><span style="color: rebeccapurple;">full dataset</span></b>, 
+                            instances of each emotion do not consistently correspond to a single physiological pattern. 
+                            Likewise, physiological patterns are not specific to just one emotion.
+            
+                            </p>
+
+                            <button class = "button" id ="data_button">Refresh full dataset</button>
+
+                        <!-- <p id = read-below >*Scroll to learn more about physiological patterns...</p> -->
+
+                </div>
+                
+                </div>
+
+                <div id = ps-grid>
+
+                        <div id = "ps-header-box">
+                            <h4 id=ps-header-text> *Pattern overview </h4>
+                            <p id=ps-header-subtext> One sample participant's top 5 clusters. </p>
+                        </div>
+
+                        <div class= "ps-pattern" id = "pat-A">
+                            <p>
+                                <h5 class= "head-blurb"> Pattern A </h5>
+                                <ul>
+                                    <li> <b>&darr;</b> blood flow </li>
+                                    <li> <b>&uarr;</b> heart contraction force ("contractility") </li>
+                                    <li> <b>&harr;</b> heart rate </li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class= "ps-pattern" id = "pat-B">
+                            <p>
+                                <h5 class= "head-blurb"> Pattern B </h5>
+                                <ul>
+                                    <li> <b>&harr;</b> blood flow </li>
+                                    <li> <b>&darr;</b> heart contraction force ("contractility") </li>
+                                    <li> <b>&darr;</b> heart rate </li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class= "ps-pattern" id = "pat-C">
+                            <p>
+                                <h5 class= "head-blurb"> Pattern C </h5>
+                                <ul>
+                                    <li> <b>&uarr;</b> blood flow </li>
+                                    <li> <b>&darr;</b> heart contraction force ("contractility") </li>
+                                    <li> <b>&darr;</b> heart rate </li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class= "ps-pattern" id = "pat-D">
+                            <p>
+                                <h5 class= "head-blurb"> Pattern D </h5>
+                                <ul>
+                                    <li> <b>&darr;</b> blood flow </li>
+                                    <li> <b>&uarr;</b> heart contraction force ("contractility") </li>
+                                    <li> <b>&uarr;</b> heart rate </li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class= "ps-pattern" id = "pat-E">
+                            <p>
+                                <h5 class= "head-blurb"> Pattern D </h5>
+                                <ul>
+                                    <li> <b>&darr;</b> blood flow </li>
+                                    <li> <b>&darr;</b> heart contraction force ("contractility") </li>
+                                    <li> <b>&darr;</b> heart rate </li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class= "ps-pattern" id = "pat-UC">
+                            <p>
+                                <h5 class= "head-blurb"> Unclustered (UC) </h5>
+                                <ul>
+                                    <li><i>Emotion instances that were "unclustered" did not correspond to any of the five other patterns. </i></li>
+                                </ul>
+                            </p>
+                        </div>
+
+                </div>
+
+                <div id = read-preprint> 
+                    <p>Read our full preprint here: </p>
+                    <a href = "https://psyarxiv.com/cvjb8/" >"Context-aware experience sampling reveals the scale of variation in affective experience" (Hoemann et. al, 2020)</a>
+                </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
+
+
+<!-- /* CODE BIB: */ -->
+<!-- /* 1.  For meta tag specifying viewport adjustments for mobile: https://stackoverflow.com/questions/14638524/css-font-size-not-working-properly-on-mobile-device */ -->
