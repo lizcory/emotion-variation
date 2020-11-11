@@ -1,4 +1,4 @@
-d3.csv(".emo-var-data/data/ind_word_counts_015_trans.csv").then(function(data) {
+d3.csv("./data/ind_word_counts_015_trans.csv").then(function(data) {
     console.log(data);
 
     //############################# Set up necessary variables #############################// 
