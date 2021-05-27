@@ -28,8 +28,8 @@ html, body {
   display: block;
   flex: 50%;
   /* height: 85vh; */
-  min-height: 60vh;
-  max-height: 85vh;
+  min-height: 30vw;
+  max-height: 50vw;
   min-width: 50vw;
   /* min-height: 600px; */
   max-width: 60vw;
@@ -192,7 +192,6 @@ p {
   margin-left: 0;
   grid-column: span 2;
   grid-area: "ps-header";
-  flex-grow: ;
 }
 
 #ps-header-text {
@@ -319,7 +318,7 @@ a:active {
 
   #chart {
     /* order: 2; */
-    min-height: 70vh;
+    min-height: 60vw;
     /* width: 60%; */
     min-width: 60vw;
 
