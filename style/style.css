@@ -1,6 +1,6 @@
 /* /////////////////////////////////////////////////////////////////////////// */
 /* GENERAL SET-UP */
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 
 * {
@@ -11,11 +11,13 @@
 html, body {
   margin: 0px;
   padding: 0px;
+  background-color: #f8f8ff;
 }
 
 #top-container {
   display: flex;
   flex-wrap: wrap-reverse;
+  /* align-items: center; */
 }
 
 /* /////////////////////////////////////////////////////////////////////////// */
@@ -23,16 +25,21 @@ html, body {
 #chart {
   position: relative;
   flex: 50%;
-  height: 98vh;
-  min-height: 680px;
-  max-width: 90%;
-  margin: 10px;
-  margin-bottom: 15px;
+  height: 85vh;
+  min-width: 50vw;
+  /* min-height: 600px; */
+  max-width: 60vw;
+  margin: 0.5rem;
+}
+
+text {
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 10pt;
 }
 
 .axisLabel {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16pt;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14pt;
   font-weight: bold;
 }
 
@@ -52,7 +59,7 @@ html, body {
   left: 5px;           
   top: 12px;
   visibility: hidden;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 450;
   font-size: 10pt;
   background-color: "gray";
@@ -62,53 +69,55 @@ html, body {
 /* /////////////////////////////////////////////////////////////////////////// */
 /* TEXT BOX STYLING */
 
+.blurb, #subhead-blurb, .head-blurb, #read-preprint {
+  width: 95%;
+}
+
 #text-box {
-  flex: 20%;
-  margin: 10px;
+  flex: 30%;
+  margin: 5px;
   margin-bottom: 20px;
-  margin-right: 40px;
-  padding: 10px;
+  margin-right: 20px;
   min-height: 0;
 }
 
 #page-title {
   font-family: "Rubik";
-  font-size: 32pt;
+  font-size: 35pt;
   font-weight: 800;
-  margin-bottom: 10px;
-  margin-top: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .blurb {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 12pt;
-  font-weight: 325;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
 .head-blurb {
   font-family: "Rubik";
-  font-size: 12.5pt;
+  font-size: 12pt;
   font-weight: 800;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
 #subhead-blurb {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 11pt;
-  font-weight: 35O;
-  font-style: italic;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  /* font-style: italic; */
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .section-header {
   font-family: "Rubik";
-  font-size: 13.5pt;
+  font-size: 15pt;
   font-weight: bolder;
-  margin-top: 10px;
+  margin-top: 0.5rem;
   margin-bottom: 2px;
 }
 
@@ -125,11 +134,11 @@ html, body {
 }
 
 .button {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 10pt;
   font-weight: 700;
   margin: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 #happy_data_button {
@@ -174,14 +183,14 @@ html, body {
 
 #ps-header-subtext {
   font-family: "Rubik";
-  font-size: 12pt;
+  font-size: 14pt;
   font-weight: 300;
   margin: 14px;
 }
 
 .ps-pattern {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 13pt;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12pt;
   font-weight: 300;
   margin: 5px;
   width: 75%;
@@ -212,26 +221,28 @@ html, body {
   display: grid;
   grid-template-rows: 0.25fr 1.25fr 1.25fr;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 10px;
   margin-left: 50px;
   margin-right: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 2rem;
   grid-template-areas: 
     "ps-header ps-header ps-header"
     "pat-A pat-B pat-C"
     "pat-D pat-E pat-UC";
 }
 
+li {
+  font-size: 10pt;
+}
 
 /* /////////////////////////////////////////////////////////////////////////// */
 /* READ PRE-PRINT STYLING */
 
 #read-preprint {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 12.5pt;
-  font-weight: 300;
-  margin: 50px;
-  margin-top: 100px;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  margin: 2rem;
+  margin-bottom: 4rem;
   /* color: slategray; */
 }
 
@@ -264,29 +275,66 @@ a:active {
 
  @media only screen and (max-width: 1300px) {
   
-  /* #top-container {
-  flex-flow: column;
-  } */
+  #top-container {
+    align-items: stretch;
+    width: 60%;
+    margin: auto;
+  }
 
-  /* #text-box {
-    order: 1;
-  } */
+  .blurb, #subhead-blurb, .head-blurb {
+    /* width: 90%; */
+  }  
 
   #chart {
     /* order: 2; */
     min-height: 75vh;
-    min-width: 100%;
+    width: 60%;
+
+  }
+
+  #ps-grid, #read-preprint {
+    /* order: 2; */
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
   }
 
 } 
 
+@media only screen and (max-width: 768px) {
 
-@media only screen and (max-height: 650px) {
+  #top-container {
+    align-items: stretch;
+    width: 90vw;
+    margin: auto;
+  }
+
+
+  #chart {
+    /* order: 2; */
+    min-height: 40vh;
+    min-width: 90vw;
+    max-width: 90vw;
+    /* width: 85%; */
+
+  }
+
+  #ps-grid, #read-preprint {
+    /* order: 2; */
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  
+}
+/* @media only screen and (max-height: 650px) {
   
   #chart {
     min-height: 650px;
     min-width: 100%;
   }
 
-}
+} */
 
