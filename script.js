@@ -8,11 +8,14 @@ d3.csv("./data/ind_word_counts_015_trans.csv").then(function(data) {
     var width = document.querySelector("#chart").clientWidth;
     var height = document.querySelector("#chart").clientHeight;
     var margin = {top: 40, left: 150, right: 40, bottom: 100};
+    // var margin = {top: 20, left: 50, right: 20, bottom: 50};
+
 
     var svg = d3.select("#chart")
         .append("svg")
         .attr("width", width)
-        .attr("height", height);
+        .attr("height", width);
+        // .attr("viewBox", `0 0 ${width} ${height}`);
 
     /*
     /////////// ///////////  FILTER THE DATA  /////////// /////////// 
