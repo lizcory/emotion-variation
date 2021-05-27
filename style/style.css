@@ -207,7 +207,9 @@ p {
   font-family: "Rubik";
   font-size: 14pt;
   font-weight: 300;
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
 }
 
 .ps-pattern {
