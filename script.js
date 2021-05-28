@@ -1,21 +1,70 @@
 d3.csv("./data/ind_word_counts_015_trans.csv").then(function(data) {
-    console.log(data);
+    // console.log(data);
 
     //############################# Set up necessary variables #############################// 
     /*
     /////////// ///////////   DEFINE SVG DIM. + CREATE SVG CANVAS  /////////// /////////// 
     */
-    var width = document.querySelector("#chart").clientWidth;
-    var height = document.querySelector("#chart").clientHeight;
+    const size = {w: 600, h: 600};
+    var width = document.querySelector("#chart").clientWidth * 0.9;
+    var height = document.querySelector("#chart").clientHeight * 0.9;
     var margin = {top: 40, left: 150, right: 40, bottom: 100};
     // var margin = {top: 20, left: 50, right: 20, bottom: 50};
 
+//     size.w = width;
+//     size.h = height;
+// // 
 
     var svg = d3.select("#chart")
         .append("svg")
         .attr("width", width)
-        .attr("height", width);
+        .attr("height", height)
+        .call(responsivefy);
         // .attr("viewBox", `0 0 ${width} ${height}`);
+
+
+    function responsivefy(svg) {
+
+        console.log("response");
+
+        // get container + svg aspect ratio
+        var container = d3.select(svg.node().parentNode),
+            width = parseInt(svg.style("width")),
+            height = parseInt(svg.style("height")),
+            aspect = width / height;
+
+        // console.log(continer)
+         // add viewBox and preserveAspectRatio properties,
+        // and call resize so that svg resizes on inital page load
+        svg.attr("viewBox", "0 0 " + width + " " + height)
+            .attr("perserveAspectRatio", "xMinYMid")
+            .call(resize);
+
+        // to register multiple listeners for same event type, 
+        // you need to add namespace, i.e., 'click.foo'
+        // necessary if you call invoke this function for multiple svgs
+        // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+        d3.select(window).on("resize." + container.attr("id"), resize);
+
+    
+         // get width of container and resize svg to fit it
+        function resize() {
+            var targetWidth = parseInt(container.style("width"));
+            svg.attr("width", targetWidth);
+            svg.attr("height", Math.round(targetWidth / aspect));
+            svg.selectAll("text")
+                .style('font-size', ".8em");
+
+            svg.selectAll("text.axisLabel")
+                .style('font-size', "1.1em");
+
+            // console.log(targetWidth);
+
+        }
+
+    }
+    
+    
 
     /*
     /////////// ///////////  FILTER THE DATA  /////////// /////////// 
@@ -358,9 +407,9 @@ function drawFullDataPoints() {
                     
     /////////// ///////////  ADD SIMPLE TOOLTIP  /////////// ///////////  
 
-       svg.selectAll("circle")
+    //    svg.selectAll("circle")
+    svg.selectAll("circle") 
             .on("mouseover", function(d){       
-
 
         var cx = +d3.select(this).attr("cx")+20;   
         var cy = +d3.select(this).attr("cy")+10;
@@ -414,8 +463,6 @@ setTimeout(function() { drawFullDataPoints(); }, 9000);
 
     d3.select("#data_button").on("click", drawFullDataPoints)
 
-
-
 });
 
 
@@ -429,7 +476,7 @@ setTimeout(function() { drawFullDataPoints(); }, 9000);
 // 4. For getting total instance sums https://stackoverflow.com/questions/40206410/d3-on-how-to-sum-values
 // 5. For CSS managing overflow in grid layout https://www.smashingmagazine.com/2017/09/css-grid-gotchas-stumbling-blocks/
 // 6. For getting just the instances values into their own arrays  https://stackoverflow.com/questions/19590865/from-an-array-of-objects-extract-value-of-a-property-as-array
-
+// 7. Responsive chart: https://brendansudol.com/writing/responsive-d3
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% //
 
