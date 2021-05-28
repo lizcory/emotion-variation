@@ -142,12 +142,12 @@ d3.csv("./data/ind_word_counts_015_trans.csv").then(function(data) {
         .attr("y", height-margin.bottom/4)
         .text("Physiological Patterns*");
     
-    var yAxisLabel = svg.append("text")
-        .attr("class", "axisLabel")
-        .attr("transform", "rotate(-90)")
-        .attr("x",-height/2)
-        .attr("y", margin.left/4.5)
-        .text("Emotion Words");   
+    // var yAxisLabel = svg.append("text")
+    //     .attr("class", "axisLabel")
+    //     .attr("transform", "rotate(-90)")
+    //     .attr("x",-height/2)
+    //     .attr("y", margin.left/4.5)
+    //     .text("Emotion Words");   
 
 
     /////////// ///////////   DRAW AXES  ///////////  ///////////

@@ -44,7 +44,7 @@ text {
 .axisLabel {
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14pt;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .axis {
@@ -83,7 +83,7 @@ text {
 
 #text-box {
   display: block;
-  flex: 25%;
+  flex: 30%;
   margin: 2rem;
   margin-top: 0;
   /* margin-bottom: 2rem;
@@ -94,7 +94,7 @@ text {
 #page-title {
   font-family: "Rubik";
   font-size: 35pt;
-  font-weight: 800;
+  font-weight: 500;
   margin-bottom: 0;
   margin-top: 1rem;
 }
@@ -110,9 +110,9 @@ text {
 .head-blurb {
   font-family: "Rubik";
   font-size: 12pt;
-  font-weight: 800;
-  margin-top: 0.05rem;
-  margin-bottom: 0.05rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #subhead-blurb {
@@ -127,7 +127,7 @@ text {
 .section-header {
   font-family: "Rubik";
   font-size: 15pt;
-  font-weight: bolder;
+  font-weight: 500;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -192,7 +192,7 @@ p {
 #ps-header-text {
   font-family: "Rubik";
   font-size: 22pt;
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -200,7 +200,7 @@ p {
 #ps-header-subtext {
   font-family: "Rubik";
   font-size: 14pt;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
 
@@ -209,7 +209,7 @@ p {
 .ps-pattern {
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 12pt;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0.5rem;
   width: 75%;
 }
@@ -372,7 +372,7 @@ a:active {
 @media only screen and (max-width: 576px) {
   
   #chart {
-    min-height: 40vh;
+    min-height: 55vh;
     min-width: 98vw;
     max-width: 98vw;
   }
@@ -381,10 +381,9 @@ a:active {
     /* font-size: 10pt; */
   }
 
-  .axisLabel {
-    /* font-size: 10pt; */
+  #page-title {
+    margin-top: 0.5rem;
   }
-
 
   #top-container {
     align-items: stretch;
