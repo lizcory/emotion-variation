@@ -8,7 +8,7 @@ d3.csv("./data/ind_word_counts_015_trans.csv").then(function(data) {
     const size = {w: 600, h: 600};
     var width = document.querySelector("#chart").clientWidth * 0.9;
     var height = document.querySelector("#chart").clientHeight * 0.9;
-    var margin = {top: 40, left: 150, right: 40, bottom: 100};
+    var margin = {top: 40, left: 100, right: 40, bottom: 100};
     // var margin = {top: 20, left: 50, right: 20, bottom: 50};
 
 //     size.w = width;
@@ -53,10 +53,10 @@ d3.csv("./data/ind_word_counts_015_trans.csv").then(function(data) {
             svg.attr("width", targetWidth);
             svg.attr("height", Math.round(targetWidth / aspect));
             svg.selectAll("text")
-                .style('font-size', ".8em");
+                // .style('font-size', ".8em");
 
             svg.selectAll("text.axisLabel")
-                .style('font-size', "1.1em");
+                // .style('font-size', "1.1em");
 
             // console.log(targetWidth);
 
@@ -156,14 +156,14 @@ d3.csv("./data/ind_word_counts_015_trans.csv").then(function(data) {
         .attr("class", "axis")
         .attr("id", "xAxis")
         .attr("transform", `translate(0, ${height-margin.bottom})`)
-        .call(d3.axisBottom().tickPadding(10).scale(xScale));
+        .call(d3.axisBottom().tickPadding(8).scale(xScale));
 
 
     var yAxis = svg.append("g")
         .attr("class", "axis")
         .attr("id", "yAxis")
         .attr("transform", `translate(${margin.left}, 0)`) 
-        .call(d3.axisLeft().tickPadding(10).scale(yScale))
+        .call(d3.axisLeft().tickPadding(8).scale(yScale))
 
     
     
@@ -229,12 +229,12 @@ function drawHappyPoints() {
     xAxis.transition()             
         .duration(1000)
         // .delay(1000)
-        .call(d3.axisBottom().tickPadding(10).scale(xScale));           
+        .call(d3.axisBottom().tickPadding(8).scale(xScale));           
 
     yAxis.transition()              
         .duration(1000)
         // .delay(1000)
-        .call(d3.axisLeft().tickPadding(10).scale(yScale));  
+        .call(d3.axisLeft().tickPadding(8).scale(yScale));  
 
     
     /////////// ///////////  ADD SIMPLE TOOLTIP  /////////// ///////////  
@@ -312,12 +312,12 @@ function drawPatAPoints() {
     xAxis.transition()             
         .duration(1000)
         // .delay(5*1000)
-        .call(d3.axisBottom().tickPadding(10).scale(xScale));           
+        .call(d3.axisBottom().tickPadding(8).scale(xScale));           
 
     yAxis.transition()              
         .duration(1000)
         // .delay(5*1000)
-        .call(d3.axisLeft().tickPadding(10).scale(yScale));   
+        .call(d3.axisLeft().tickPadding(8).scale(yScale));   
 
 
     /*
@@ -398,12 +398,12 @@ function drawFullDataPoints() {
                 xAxis.transition()             
                     .duration(1000)
                     // .delay(9*1000)
-                    .call(d3.axisBottom().tickPadding(10).scale(xScale));           
+                    .call(d3.axisBottom().tickPadding(8).scale(xScale));           
             
                 yAxis.transition()              
                     .duration(1000)
                     // .delay(9*1000)
-                    .call(d3.axisLeft().tickPadding(10).scale(yScale));   
+                    .call(d3.axisLeft().tickPadding(8).scale(yScale));   
                     
     /////////// ///////////  ADD SIMPLE TOOLTIP  /////////// ///////////  
 

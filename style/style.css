@@ -36,21 +36,22 @@ html, body {
   /* max-width: 60vw; */
 }
 
-text {
-  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 10pt;
-}
-
 .axisLabel {
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14pt;
+  font-size: 13pt;
   font-weight: 400;
 }
 
+.tick > text{
+  font-size: 9pt;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-seri
+}
+
+
 .axis {
-  font-size: 11pt;
+  /* font-size: 11pt; */
   stroke-width: 1.2pt;
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 
 #xAxis {
@@ -121,7 +122,8 @@ text {
   font-weight: 400;
   /* font-style: italic; */
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  /* display: block; */
 }
 
 .section-header {
@@ -211,6 +213,7 @@ p {
   font-size: 12pt;
   font-weight: 400;
   margin: 0.5rem;
+  min-width: 15%;
   width: 75%;
 }
 
@@ -335,6 +338,23 @@ a:active {
 
 } 
 
+@media only screen and (max-width: 992px) {
+
+  #chart {
+    min-height: 80vw;
+    /* width: 60%; */
+    min-width: 60vw;
+  }
+
+  #top-container {
+    align-items: center;
+    width: 60vw;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+}
+
 @media only screen and (max-width: 768px) {
 
   #top-container {
@@ -346,7 +366,9 @@ a:active {
   }
 
   #text-box{
-    margin: 1rem;
+    /* margin: 1rem; */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .blurb, #subhead-blurb, .head-blurb {
@@ -354,7 +376,7 @@ a:active {
   }  
 
   #chart {
-    min-height: 70vw;
+    min-height: 90vw;
     min-width: 70vw;
     /* max-width: 90vw; */
 
@@ -370,11 +392,25 @@ a:active {
   
 }
 @media only screen and (max-width: 576px) {
+
+  body{
+    width: 100%;
+    /* overflow-x: hidden; */
+  }
   
   #chart {
-    min-height: 70vh;
-    min-width: 105vw;
-    max-width: 105vw;
+    min-height: 85vh;
+    min-width: 98vw;
+    max-width: 98vw;
+  }
+
+  .tick > text{
+    font-size: 7pt;
+    /* x: "-2"; */
+  }
+
+  .axisLabel {
+    font-size: 10pt;
   }
 
   #page-title {
@@ -384,21 +420,29 @@ a:active {
   #top-container {
     align-items: stretch;
     width: 98vw;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    /* margin-top: 1rem; */
+    /* margin-bottom: 1rem; */
+  }
+
+  #text-box{
+    max-width: 95vw;
   }
 
   #grid-container {
     width: 95vw;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    /* margin-right: 1rem; */
+    /* margin-left: 1rem; */
 
   }
 
   #ps-header-box {
     width: 95vw;
+  }
+
+  ul{
+    padding-inline-start: 20px;
   }
 
 }
